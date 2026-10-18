@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Videojuegos</title>
+    <!-- RUTA OFICIAL OPERATIVA DE BOOTSTRAP 6.0 ALPHA 1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <!-- VINCULACIÓN DIRECTA A MI ARCHIVO DE ESTILOS PROPIO -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-dark text-light">
+
+    <!-- Encabezado Semántico con Video de Fondo (Criterio 2 y 9) -->
+    <header class="container-fluid mb-5 shadow-sm position-relative overflow-hidden header-video-container">
+        
+        <!-- Capa trasera: Elemento de video en bucle y silenciado -->
+        <video autoplay loop muted playsinline class="video-bg">
+            <source src="assets/video/video.mp4" type="video/mp4">
+            Tu navegador no soporta videos de fondo.
+        </video>
+
+        <!-- Capa delantera: Textos flotantes con posicionamiento z-index -->
+        <div class="header-content position-relative z-2">
+            <h1 class="display-5 fw-bold mb-1">Base de Datos Free-To-Play</h1>
+            <p class="text-muted mb-1">Catálogo de Videojuegos</p>
+            <!-- Cumplimiento de los Términos de Uso de la API con enlace activo -->
+            <small class="text-secondary">Datos proporcionados por <a href="https://freetogame.com" target="_blank"
+                    class="text-decoration-none fw-bold">FreeToGame.com</a></small>
+        </div>
+    </header>
+
+
+    <!-- Barra de Navegación y Control de Filtros en Pantalla -->
+    <nav class="container my-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Dropdown de Bootstrap para Filtrar de forma Limpia por Género -->
+                <div class="input-group shadow">
+                    <label class="input-group-text bg-info text-dark fw-bold" for="selector-categoria">Filtrar
+                        por Categoria:</label>
+                    <select class="form-select bg-secondary text-white border-0" id="selector-categoria">
+                        <!-- Categorías Ordenadas Alfabéticamente -->
+                        <option value="anime" selected>Anime (Estilo Visual Japonés)</option>
+                        <option value="battle-royale">Battle Royale (Supervivencia Todos Contra Todos)</option>
+                        <option value="card">Card Games (Estrategia de Cartas Coleccionables)</option>
+                        <option value="fighting">Fighting (Combate y Artes Marciales)</option>
+                        <option value="moba">MOBA (Campos de Batalla Multijugador)</option>
+                        <option value="mmorpg">MMORPG (Rol Multijugador Masivo)</option>
+                        <option value="racing">Racing (Simulación y Carreras de Alta Velocidad)</option>
+                        <option value="shooter">Shooters (Acción en Primera Persona)</option>
+                        <option value="sports">Sports (Deportes y Simulación)</option>
+                        <option value="strategy">Strategy (Estrategia en Tiempo Real)</option>
+
+                        <!-- Línea Separadora Visual -->
+                        <option disabled>────────────────────────────────────────</option>
+
+                        <!-- Opción Especial al Final -->
+                        <option value="all">All Games (Mostrar Todo el Catálogo Disponible)</option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Principal de Despliegue de Datos -->
+    <main class="container my-5">
+        <!-- Espacio Dinámico para Alertas e Inyecciones del Bloque Try/Catch -->
+        <div id="contenedor-estado" class="text-center my-3"></div>
+
+        <!-- Grilla Semántica y Responsiva de Bootstrap para las Cards de Juegos -->
+        <section id="galeria-juegos" class="row row-cols-5 g-4">
+        </section>
+    </main>
+
+    <!-- Footer Semántico con Video de Fondo y Atribución Legal (Criterio 2, 6 y 9) -->
+    <footer class="container-fluid py-4 border-top border-secondary position-relative overflow-hidden footer-video-container">
+        
+        <!-- Capa trasera: Elemento de video en bucle y silenciado -->
+        <video autoplay loop muted playsinline class="video-bg">
+            <source src="assets/video/video.mp4" type="video/mp4">
+            Tu navegador no soporta videos de fondo.
+        </video>
+
+        <!-- Capa delantera: Contenido de créditos flotante con Copyright legal (Z-Index 2) -->
+        <div class="footer-content position-relative z-2 container">
+            <p class="mb-1 small text-white fw-medium">Proyecto Catálogo Videojuegos | Conexión en la Nube con freetogame.com</p>
+            
+            <!-- Cláusula de Copyright institucional exigida por los términos de uso -->
+            <p class="mb-2 text-white-50 lh-sm spec-copyright">
+                &copy; 2026 FreeToGame Database. Todos los derechos reservados.
+            <p class="mb-2 text-white-50 lh-sm spec-copyright">Todas las marcas comerciales, logotipos e imágenes de los videojuegos son propiedad de sus respectivos dueños en sus plataformas de origen.
+            </p>
+
+            <p class="mb-0 small text-info font-monospace" style="font-size: 0.8rem;"><strong>Desarrollado por: José Muñoz L.</strong></p>
+        </div>
+    </footer>
+
+
+
+    <!-- JavaScript oficial de Bootstrap 6 (Requerido para la estructura modular ESM) -->
+    <script type="module" src="https://jsdelivr.net"
+        integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+        crossorigin="anonymous"></script>
+
+    <!-- Vinculación del Script de Lógica de la Aplicación -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

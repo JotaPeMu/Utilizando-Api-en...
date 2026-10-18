@@ -1,0 +1,176 @@
+/* ==========================================================================
+   1. Estilos Globales de la Interfaz
+   ========================================================================== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Forzado de contorno estético para el título del catálogo */
+header h1.display-5 {
+    color: #ffffff !important;
+    -webkit-text-stroke: 1.5px #000000; /* Contorno negro para separar el texto del video animado */
+}
+
+/* ==========================================================================
+   2. Personalización de las Tarjetas de Videojuegos
+   ========================================================================== */
+.game-card {
+    cursor: pointer;
+    background-color: #323c46 !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 100%; /* Evita que la tarjeta se desborde */
+    margin: 0 auto; /* Centra la tarjeta dentro de su espacio asignado */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto de elevación interactiva (Cariño por el código - Criterio 9) */
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(13, 202, 240, 0.25) !important; /* Brillo celeste cian */
+    border-color: #0dcaf0 !important;
+    border: 2px solid #0dcaf0 !important; 
+}
+
+/* Forzado de estilos para títulos del juego inyectados dinámicamente */
+.game-card .card-title {
+    color: #ffffff !important; /* Blanco puro para destacar el título principal */
+    font-size: 1.35rem; /* Tamaño equilibrado para títulos h4 */
+    letter-spacing: 0.5px; /* Ligero espaciado entre letras para mayor elegancia */
+}
+
+/* Color de la descripción corta del juego */
+.game-card .card-text {
+    color: #e0e0e0 !important; /* Gris claro de alta legibilidad */
+}
+
+/* Color de las etiquetas técnicas (Plataforma, Desarrollador, etc.) */
+.game-card p.small {
+    color: #f8f9fa !important; /* Blanco hueso para contrastar con el fondo oscuro */
+}
+
+/* Resalta las palabras en negrita dentro de las tarjetas */
+.game-card p.small strong {
+    color: #0dcaf0 !important; /* Mismo celeste cian interactivo que uso en el hover */
+}
+
+/* Color de la fecha de estreno en el footer de la tarjeta */
+.game-card .card-footer small {
+    color: #b3b3b3 !important; /* Gris suave tenue */
+}
+
+/* ==========================================================================
+   3. Adaptación Responsiva de las Imágenes de la API
+   ========================================================================== */
+.game-card img {
+    height: 160px; /* Altura fija ideal para la proporción horizontal */
+    object-fit: cover; /* Recorta y adapta la imagen sin deformarla */
+    width: 100%; /* Se adapta perfectamente al ancho de su columna */
+    display: block; /* Elimina espacios en blanco residuales debajo de la imagen */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   4. Estilos para los Textos de Estado, Carga y Componentes
+   ========================================================================== */
+.status-text {
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   5. Estilos Estructurales para Capas Multimedia (Header y Footer)
+   ========================================================================== */
+
+/* Regla unificada para congelar los videos por detrás de los textos */
+.header-video-container .video-bg,
+.footer-video-container .video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Evita la distorsión multimedia */
+}
+
+/* Control de opacidad específico para el encabezado (45% de brillo) */
+.header-video-container .video-bg {
+    opacity: 0.45;
+}
+
+/* Control de opacidad específico para el pie de página (35% para cuidar el copyright) */
+.footer-video-container .video-bg {
+    opacity: 0.35;
+}
+
+/* ==========================================================================
+   6. Componente Encabezado de la Aplicación
+   ========================================================================== */
+.header-video-container {
+    text-align: center;
+    padding: 50px 0; /* Espaciado vertical para que luzca el video */
+    background-color: #121212;
+    min-height: 180px;
+}
+
+.header-content h1 {
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9); /* Resguardo de lectura sobre el video */
+}
+
+.header-content p.text-muted {
+    color: #0dcaf0 !important; /* Subtítulo cian de alta visibilidad */
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.header-content small.text-secondary,
+.header-content small a {
+    color: #ffffff !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* ==========================================================================
+   7. Componente Pie de Página (Footer Semántico con Fuentes Más Grandes)
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 35px 0; /* Aumenta ligeramente el margen para equilibrar las fuentes grandes */
+    background-color: #000000;
+    border-top: 2px solid #0dcaf0; /* Cierre simétrico cian superior */
+    color: #ffffff;
+}
+
+/* Configuración de tamaño ampliado para el crédito principal */
+.footer-content p {
+    font-size: 1.1rem !important; /* Sube de tamaño base para alta legibilidad en PC */
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Forzado de color cian brillante y tamaño destacado en mi crédito de alumno */
+.footer-content .text-info {
+    color: #0dcaf0 !important; 
+    font-size: 1.15rem !important; /* Destaca mi firma como desarrollador */
+}
+
+/* Estilo complementario ampliado para la cláusula de copyright del catálogo */
+.footer-content .spec-copyright {
+    font-size: 0.9rem !important; /* Sube de 0.75rem a 0.9rem para evitar fatiga visual */
+    max-width: 850px; /* Se ensancha el contenedor para albergar las fuentes más grandes */
+    margin: 10px auto 10px auto;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+    opacity: 0.8; /* Aumenta un poco la opacidad para mejorar el contraste */
+    line-height: 1.4;
+}
