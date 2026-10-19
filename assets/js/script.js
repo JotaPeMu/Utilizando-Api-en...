@@ -137,7 +137,7 @@ function activarMecanismoResilienteLocal(filtroSeleccionado) {
     renderizarTarjetasEnPantalla(datosFiltrados, filtroSeleccionado);
 }
 
-// Escuchador para detectar el cambio del dropdown en tiempo real
+// Escuchador para detectar el cambio del menú desplegable en tiempo real
 selectorCategoria.addEventListener('change', (evento) => {
     const nuevaCategoria = evento.target.value;
     
