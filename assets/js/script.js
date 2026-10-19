@@ -65,10 +65,10 @@ function renderizarTarjetasEnPantalla(juegos, generoFiltrado) {
     }
 
     // Limitamos a los primeros resultados para optimizar la velocidad según la documentación
-    const juegosIlimitados = juegos.slice(0, 50);
+    const juegoslimitados = juegos.slice(0, 50);
 
     // Mapeo dinámico e inyección utilizando la sintaxis de tarjetas oficiales de Bootstrap 6
-    juegosIlimitados.forEach(juego => {
+    juegoslimitados.forEach(juego => {
         const columna = document.createElement('div');
         columna.className = 'col';
 
@@ -98,11 +98,11 @@ function renderizarTarjetasEnPantalla(juegos, generoFiltrado) {
 }
 
 /**
- * Mecanismo de contingencia local que procesa los datos JSON reales del examen si falla la conexión remota
+ * Mecanismo de contingencia local que procesa los datos JSON por si falla la conexión remota
  * @param {string} filtroSeleccionado - Género a procesar por el método filter
  */
 function activarMecanismoResilienteLocal(filtroSeleccionado) {
-    // Array estructurado con los datos reales e imágenes de tu documento técnico de examen
+    // Array estructurado con los datos reales e imágenes del documento técnico
     const baseDatosDeSeguridad = [
        { id: 540, title: "Overwatch", thumbnail: "https://freetogame.com", short_description: "A hero-focused first-person team shooter from Blizzard Entertainment.", genre: "Shooter", platform: "PC (Windows)", developer: "Blizzard Entertainment", release_date: "2022-10-04" },
         { id: 516, title: "PUBG: BATTLEGROUNDS", thumbnail: "https://freetogame.com", short_description: "Get into the action in one of the longest running battle royale games PUBG Battlegrounds.", genre: "Shooter", platform: "PC (Windows)", developer: "KRAFTON, Inc.", release_date: "2022-01-12" },
@@ -132,7 +132,7 @@ function activarMecanismoResilienteLocal(filtroSeleccionado) {
         );
     }
 
-    // Renderizamos los elementos correspondientes de forma transparente aplicando las clases v6
+    // Renderizamos los elementos correspondientes de forma transparente aplicando las clases v6 de Bootstrap
     contenedorEstado.innerHTML = `<div class="alert alert-info py-2" style="font-size:0.9rem;">Framework: Bootstrap v6.0 Core Platform Engine Active</div>`;
     renderizarTarjetasEnPantalla(datosFiltrados, filtroSeleccionado);
 }
